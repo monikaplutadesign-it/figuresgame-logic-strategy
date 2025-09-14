@@ -170,8 +170,13 @@
 <body>
 
     <div class="game-container">
-        <h1 class="text-3xl font-bold mb-6 text-indigo-400">The Figure Game</h1>
+        <h1 class="text-3xl font-bold mb-6 text-gray-300">Choose a figure to play your turn.</h1>
         
+        <!-- Figures to Choose From -->
+        <div id="player-figures" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 mb-8">
+            <!-- Figure cards will be generated here by JS -->
+        </div>
+
         <!-- Player Figures Remaining -->
         <div class="flex justify-between items-center mb-6 text-lg">
             <div class="flex flex-col items-start">
@@ -184,11 +189,6 @@
                 <span id="ai-figures-count" class="font-bold text-red-400">6</span>
                 <span class="text-sm text-gray-400">Consecutive: <span id="ai-consecutive-count">0</span></span>
             </div>
-        </div>
-
-        <!-- Figures to Choose From -->
-        <div id="player-figures" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 mb-8">
-            <!-- Figure cards will be generated here by JS -->
         </div>
 
         <!-- Curtain and Reveal Area -->
@@ -210,7 +210,7 @@
         </div>
 
         <!-- Message Log -->
-        <div id="game-message" class="result-text text-gray-300 mt-4">Choose a figure to play your turn.</div>
+        <div id="game-message" class="result-text text-gray-300 mt-4"></div>
 
     </div>
 
@@ -481,7 +481,7 @@
         aiConsecutiveCount = 0;
         updateFigureCounts();
         renderPlayerFigures();
-        gameMessageEl.textContent = 'Choose a figure to play your turn.';
+        gameMessageEl.textContent = '';
         modalEl.style.display = 'none';
         
         // Reset the curtain
